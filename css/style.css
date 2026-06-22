@@ -1,0 +1,448 @@
+/* === MELHORIAS DE PERFORMANCE === */
+/* Lazy loading para imagens */
+img {
+    loading: lazy;
+    decoding: async;
+}
+
+/* Reduzir motion para quem prefere */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* === MELHORIAS DE CONVERSÃO === */
+/* Urgência/Scarcity */
+.hero-urgency {
+    background: linear-gradient(90deg, rgba(184,92,56,0.1), rgba(212,132,90,0.1));
+    border: 1px solid var(--terracota);
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.urgency-badge {
+    background: var(--terracota);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Social Proof */
+.social-proof {
+    background: var(--cream);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--linen);
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.proof-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--forest);
+    display: block;
+}
+
+.proof-label {
+    font-size: 13px;
+    color: var(--warm-gray);
+    font-weight: 300;
+}
+
+/* Depoimentos */
+.testimonials {
+    background: white;
+}
+
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 3rem;
+}
+
+.testi-card {
+    background: var(--off-white);
+    padding: 32px;
+    border-radius: 16px;
+    border-left: 4px solid var(--sage);
+}
+
+.testi-stars {
+    color: #FFB800;
+    font-size: 18px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.testi-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--charcoal);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.testi-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testi-name {
+    font-weight: 600;
+    color: var(--forest);
+    display: block;
+    font-style: normal;
+}
+
+.testi-role {
+    font-size: 13px;
+    color: var(--warm-gray);
+}
+
+/* FAQ Accordion Melhorado */
+.faq {
+    background: var(--cream);
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.faq-q {
+    width: 100%;
+    padding: 24px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--forest);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.faq-q:hover {
+    background: rgba(122,158,114,0.05);
+}
+
+.faq-icon {
+    font-size: 24px;
+    color: var(--sage);
+    transition: transform 0.3s;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-a p {
+    padding: 0 24px 24px;
+    color: var(--warm-gray);
+    line-height: 1.8;
+}
+
+/* CTA Final */
+.cta-final {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
+    color: white;
+}
+
+.cta-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 1rem;
+    color: var(--cream);
+}
+
+.cta-box p {
+    font-size: 18px;
+    margin-bottom: 2rem;
+    color: var(--mist);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.btn-large {
+    padding: 18px 36px;
+    font-size: 14px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--cream);
+    color: var(--cream);
+    padding: 16px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--cream);
+    color: var(--forest);
+}
+
+.cta-guarantee {
+    font-size: 13px;
+    color: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* WhatsApp Badge Animado */
+.wa-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Footer Melhorado */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding: 60px 0 40px;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--forest);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-brand em {
+    color: var(--terracota);
+    font-style: italic;
+}
+
+.footer-tagline {
+    font-size: 14px;
+    color: var(--sage);
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.footer-desc {
+    font-size: 14px;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-social a {
+    color: var(--forest);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: var(--terracota);
+}
+
+.footer-heading {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--forest);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer-links-section nav,
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-section a,
+.footer-address a {
+    color: var(--warm-gray);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links-section a:hover,
+.footer-address a:hover {
+    color: var(--forest);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--linen);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--warm-gray);
+}
+
+.footer-bottom nav {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-bottom a {
+    color: var(--warm-gray);
+    text-decoration: none;
+}
+
+/* Skip Link (Acessibilidade) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--forest);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Responsividade Aprimorada */
+@media (max-width: 900px) {
+    .proof-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .testi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-large, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-urgency {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .exp-price {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .lang-switch, .wa-sticky, .nav-cta, .scroll-hint {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
